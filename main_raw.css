@@ -54,6 +54,22 @@ h1 {
     text-transform: uppercase;
 }
 
+.highlight a {
+    background: linear-gradient(to bottom, #323232 0%, #323232 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 3px 2px;
+    color: #FF7F00;
+    text-decoration: none;
+}
+
+.highlight a:hover {
+    color: rgb(50, 50, 50);
+    color: rgba(50, 50, 50, 100);
+    padding-bottom: .3em;
+    transition-duration: .5s;
+}
+
 
 a {
     background: linear-gradient(to bottom, #FF7F00 0%, #FF7F00 100%);
@@ -87,15 +103,15 @@ a {
     font-weight: 300;
 }
 
-.for-hire {
+.description-hi {
     font-weight: 600;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
 a:hover {
-    color: rgb(50, 50, 50);
-    color: rgba(50, 50, 50, 0.70);
+    color: rgb(100, 50, 0);
+    color: rgba(255, 127, 0, 100);
     padding-bottom: .3em;
     transition-duration: .5s;
 }
