@@ -4,9 +4,9 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local('');
-  src: url('assets/fonts/roboto-v2-latin-light.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-  src: url('assets/fonts/roboto-v2-latin-light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(''),
+       url('assets/fonts/roboto-v2-latin-light.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('assets/fonts/roboto-v2-latin-light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* roboto-regular latin */
@@ -15,9 +15,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('');
-  src: url('assets/fonts/roboto-v2-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-  src: url('assets/fonts/roboto-v2-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(''),
+       url('assets/fonts/roboto-v2-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('assets/fonts/roboto-v2-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* roboto-mono-light - latin */
@@ -26,9 +26,9 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local('');
-  src: url('assets/fonts/roboto-mono-v2-latin-light.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-  src: url('assets/fonts/roboto-mono-v2-latin-light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(''),
+       url('assets/fonts/roboto-mono-v2-latin-light.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('assets/fonts/roboto-mono-v2-latin-light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* roboto-mono-regular - latin */
@@ -37,9 +37,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('');
-  src: url('assets/fonts/roboto-mono-v2-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-  src: url('assets/fonts/roboto-mono-v2-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(''),
+       url('assets/fonts/roboto-mono-v2-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('assets/fonts/roboto-mono-v2-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* monument-extended-regular - latin */
@@ -48,9 +48,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('');
-  src: url('assets/fonts/monument-extended-v1-latin-regular.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-  src: url('assets/fonts/monument-extended-v1-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(''),
+       url('assets/fonts/monument-extended-v1-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('assets/fonts/monument-extended-v1-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* monument-extended-black - latin */
@@ -59,9 +59,9 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: local('');
-  src: url('assets/fonts/monument-extended-v1-latin-black.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-  src: url('assets/fonts/monument-extended-v1-latin-black.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(''),
+       url('assets/fonts/monument-extended-v1-latin-black.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('assets/fonts/monument-extended-v1-latin-black.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* monument-extended-light - latin */
@@ -70,9 +70,9 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local('');
-  src: url('assets/fonts/monument-extended-v1-latin-light.woff2') format('woff2'); /* Chrome 26+, Opera 23+, Firefox 39+ */
-  src: url('assets/fonts/monument-extended-v1-latin-light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(''),
+       url('assets/fonts/monument-extended-v1-latin-light.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('assets/fonts/monument-extended-v1-latin-light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 :root {
@@ -246,22 +246,9 @@ a img.color-reverse:hover {
   width: 41.66%;
 }
 
-.col-8 {
-  width: 66.66%;
-}
-
-.col-4 {
-  width: 33.33%;
-}
-
 .col-center {
   display: flex;
   justify-content: center;
-}
-
-.intro {
-  margin-bottom: 10px;
-  margin-top: unset;
 }
 
 .hero-image {
@@ -277,12 +264,6 @@ a img.color-reverse:hover {
   width: 100%;
   padding-left: 5em;
   padding-right: 5em;
-}
-
-@media (max-width: 900px) {
-  .small-hide {
-    display: none;
-  }
 }
 
 .blog-title {
