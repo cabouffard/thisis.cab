@@ -132,10 +132,6 @@ p {
   line-height: 35px;
 }
 
-#me p {
-  text-align: justify;
-}
-
 #header h1 {
   font-size: 150px;
   margin-top: 0px;
@@ -360,6 +356,12 @@ a img.color-reverse:hover {
   .blog-item:last-child {
     border-width: 1px 1px 1px 1px;
   }
+}
+
+@media (hover: none) {
+  a:hover { color: var(--color); }
+  a img:hover { filter: var(--color-filter); }
+  a img.color-reverse:hover { filter: var(--color-hi-filter); }
 }
 
 .nav-item img {
