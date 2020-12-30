@@ -4,9 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>CAB</title>
-        <style>
-            @font-face{font-family:'Roboto Slab';font-style:normal;font-weight:400;font-display:swap;src:local(''), url('../fonts/roboto-slab-v12-latin-regular.woff2') format('woff2'),url('../fonts/roboto-slab-v12-latin-regular.woff') format('woff')}@font-face{font-family:'Fira Mono';font-style:normal;font-weight:400;font-display:swap;src:local(''), url('../fonts/fira-mono-v9-latin-regular.woff2') format('woff2'),url('../fonts/fira-mono-v9-latin-regular.woff') format('woff')}@font-face{font-family:'Fira Mono';font-style:normal;font-weight:700;font-display:swap;src:local(''), url('../fonts/fira-mono-v9-latin-700.woff2') format('woff2'),url('../fonts/fira-mono-v9-latin-700.woff') format('woff')}html{font-size:16px}body{background:#f1f4f0;color:#323232;display:flex;font-family:'Fira Mono', monospace;font-weight:400;margin:0}body::before{background-image:url('funky-lines.webp');content:"";display:block;height:100%;left:0;opacity:0.45;position:absolute;top:0;width:100%;z-index:-1}h1{font-size:2.25em;line-height:3.2rem;margin-bottom:10px;margin-top:20px}.highlight{color:#FF7F00}.intro{font-size:1.5em;text-transform:uppercase}.horizontal-list{list-style:none;list-style-position:inside;margin:0;padding:0}.horizontal-list li{display:inline;margin-left:5px;margin-right:5px;text-transform:uppercase}.highlight a{background:linear-gradient(to bottom, #323232 0%, #323232 100%);background-position:0 100%;background-repeat:repeat-x;background-size:3px 2px;color:#FF7F00;text-decoration:none}.highlight a:hover{color:rgb(50, 50, 50);color:rgba(50, 50, 50, 100);padding-bottom:0.3em;transition-duration:0.5s}a{background:linear-gradient(to bottom, #FF7F00 0%, #FF7F00 100%);background-position:0 100%;background-repeat:repeat-x;background-size:3px 2px;color:#323232;text-decoration:none}.row{margin-bottom:45px;margin-top:45px}.intro{margin-bottom:10px;margin-top:unset}.info-pane{font-family:'Roboto Slab', serif}.description{margin:10px 200px}.quote{font-style:italic;font-weight:300}.description-hi{font-weight:600;margin-bottom:10px;margin-top:10px}a:hover{color:rgb(100, 50, 0);color:rgba(255, 127, 0, 100);padding-bottom:0.3em;transition-duration:0.5s}li{font-weight:600}.avatar{height:200px;width:200px}.hero{line-height:1.8em;text-align:center}.container{box-sizing:border-box;margin:0 auto;padding-left:2em;padding-right:2em;width:100%}.centered{align-items:center;display:flex;height:100%;justify-content:center}.content{flex:1;margin-bottom:3.2rem;margin-top:1.6rem}.wrapper{display:flex;flex-direction:column;min-height:100vh;width:100%}.bottom-bar{background:#f1f4f0;background:rgba(241, 244, 240, 0.70);border-top:1px solid rgb(0, 0, 0);border-top:1px solid rgba(0, 0, 0, 0.10);bottom:0;font-size:1.125em;letter-spacing:0.0625em;position:fixed;text-align:center;width:100%}@media (max-width: 900px){.small-hide{display:none}}
-        </style>
+        <link rel="stylesheet" href="main_raw.css">
 
         <link rel="canonical" href="https://thisis.cab/">
         <meta name="description" content="CAB's personnal website">
@@ -29,49 +27,119 @@
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="shortcut icon" href="favicon.png">
 
+        <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-rss/3.3.0/jquery.rss.min.js"></script>
+
         <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          jQuery(function($) {
+            $(document).ready(function () {
+              $("#blog-container").rss(
+                "https://medium.com/feed/@thisiscab",
+                {
+                  ssl: true,
+                  limit: 3,
+                  support: false,
+                  tokens: {
+                    'written-for': function(entry) {
+                      if (entry.link.includes('yaguara')) {
+                        return 'Yaguara'
+                      } else if  (entry.link.includes('glossier')) {
+                        return 'Glossier'
+                      }
+                    },
+                    "truncated-title": function(entry) {
+                      const maxSize = 100;
+                      if (entry.title.length >= maxSize) {
+                        return entry.title.slice(0, maxSize).trim().concat('...')
+                      } else {
+                        return entry.title
+                      }
+                    }
+                  },
+                  layoutTemplate: '{entries}',
+                  entryTemplate: '<div class="blog-item">' +
+                                  '<span class="blog-title"><a href="{{url}}">{truncated-title}</a></span>' +
+                                  '<span class="blog-company">{written-for}</span>' +
+                                  '<span class="blog-link"><a href="{{url}"><img class="btn-link-lg color-reverse" src="svgs/link.svg"></img></a></span>' +
+                                '</div>'
 
-            ga('create', 'UA-49247857-1', 'auto');
-            ga('send', 'pageview');
+                }
+              );
+
+              $('#flip-color').click(function () {
+                $(document.body).attr('data-theme', $('body').attr('data-theme') === 'light' ? 'dark' : 'light');
+              });
+            });
+          });
         </script>
+
+        <!-- <script> -->
+        <!--     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ -->
+        <!--     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), -->
+        <!--     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) -->
+        <!--     })(window,document,'script','https://www.google&#45;analytics.com/analytics.js','ga'); -->
+        <!--  -->
+        <!--     ga('create', 'UA&#45;49247857&#45;1', 'auto'); -->
+        <!--     ga('send', 'pageview'); -->
+        <!-- </script> -->
     </head>
-    <body>
-        <main class="wrapper">
+    <body data-theme="dark">
+      <div class="container">
+        <nav class="nav">
+          <ul class="nav-items">
+            <li class="nav-item"><a href="https://www.github.com/thisiscab"><img src="svgs/github.svg"></img></a></li>
+            <li class="nav-item"><a href="https://www.linkedin.com/in/thisiscab"><img src="svgs/linkedin.svg"></img></a></li>
+            <li class="nav-item"><a href="https://www.gitlab.com/thisiscab""><img src="svgs/gitlab.svg"></img></a></li>
+            <li class="nav-item"><a><img id="flip-color" src="svgs/switch.svg"></img></a></li>
+          </ul>
+        </nav>
 
-            <section class="content">
+        <section id="main">
+            <div class="row">
+              <div class="col col-center col-5">
+                <img class="hero-image" src="svgs/avatar_reg.svg" />
+              </div>
 
-                <div class="container centered">
 
-                    <div class="hero">
+              <div class="col col-7">
+                <section id="header">
+                  <h1>CAB</h1>
+                  <h2>Data Engineer</p>
+                </section>
 
-                        <header class="row">
-                            <h1>Charles-André "<span class="highlight">CAB</span>" Bouffard</h1>
-                            <p class='intro'>Data Engineer</p>
-                        </header>
+                <section id="previous">
+                  <ul>
+                    <li>Currently <a href="https://www.yaguara.co">@Yaguara</a>.</li>
+                    <li>Previously <a href="https://www.twitter.com/glossier">@Glossier</a>, <a href="https://www.twitter.com/dynamomtl">@Dynamo</a>.</li>
+                  </ul>
+                </section>
 
-                        <div class="row info-pane">
-                            <p class='description-hi'><span class="highlight">Proudly working for <a href="https://www.yaguara.co">Yaguara</a>.</span> Previously <a href="https://www.twitter.com/glossier">@Glossier</a> and <a href="https://www.twitter.com/dynamomtl">@Dynamo</a></p>
-                            <p class='description small-hide'><span class='quote'>“<span class="highlight">CAB</span> is a talented autodidact who can teach himself anything quickly and deeply. He is creative, bold and able to develop new approaches that have never been done before. He is passionate, dedicated, loyal and focused. He loves spending his free time teaching himself and learning new things.”</span> – someone</p>
-                        </div>
+                <section id="resume">
+                  <span><strong>Resume</strong></span>
+                  <span class="pl-10"><a href="#"><img class="btn-link color-reverse" src="svgs/link.svg"></img></a></span>
+                </section>
 
-                        <ul class='horizontal-list'>
-                            <li><a href="https://www.github.com/thisiscab">GitHub</a></li>
-                            <li><a href="https://www.gitlab.com/thisiscab">GitLab</a></li>
-                            <li><a href="https://www.medium.com/@thisiscab">Medium</a></li>
-                            <li><a href="https://www.linkedin.com/in/thisiscab">Linkedin</a></li>
-                        </ul>
+                <section class="me">
+                  <p><strong>CAB</strong> is a talented autodidact who can teach himself anything quickly and deeply. He is creative, bold and able to develop new approaches that have never been done before. He is passionate, dedicated, loyal and focused. He loves spending his free time teaching himself and learning new things.</p>
+                </section>
+              </div>
 
-                    </div>
+            </div>
 
-                </div>
+        </section>
 
-            </section>
+        <section id="blog">
+          <div class="row">
+            <div class="col-12">
+              <section id="blog-container">
+                <a class="blog-btn" href="https://www.medium.com/@thisiscab""><img src="svgs/medium.svg"></img></a>
+              </section>
 
-        </main>
+            </div>
+          </div>
+        <section>
+
+      </main>
 
     </body>
 </html>
