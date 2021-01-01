@@ -165,6 +165,11 @@ p {
   top: -60px;
 }
 
+
+#blog-container a img {
+  height: 32px;
+}
+
 #main {
   margin: 12rem 0;
 }
@@ -304,17 +309,21 @@ a img.color-reverse:hover {
   border-width: 1px 1px 1px 0;
 }
 
-@media (min-width: 1085px) and (max-width: 1325px) {
+@media (max-width: 1325px) {
   .container {
     padding: 0 2.5rem;
   }
 }
 
 
-@media (max-width: 1085px) {
+@media (max-width: 1275px) {
   .hero-image {
     height: 304px;
     width: 304px;
+  }
+
+  #main {
+    margin-bottom: 5rem;
   }
 }
 
@@ -327,12 +336,22 @@ a img.color-reverse:hover {
     width: 100%;
   }
 
+  .container {
+    padding: 0 1.5em;
+  }
+
   h1 {
     margin-left: 0;
   }
 }
 
 @media (min-width: 802px) and (max-width: 1085px) {
+  h1 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 963px) {
   .blog-item + .blog-item {
     border-width: 1px 1px 1px 0;
   }
@@ -340,21 +359,9 @@ a img.color-reverse:hover {
   .blog-item:last-child {
     border-width: 0 1px 1px 1px;
   }
-
-  h1 {
-    margin-left: 0;
-  }
 }
 
 @media (max-width: 802px) {
-  .blog-item:nth-child(3) {
-    border-width: 0 1px 0 1px;
-  }
-
-  .blog-item:last-child {
-    border-width: 1px 1px 1px 1px;
-  }
-
   .container {
     padding: 0 1em;
   }
@@ -365,12 +372,27 @@ a img.color-reverse:hover {
   }
 
   #header h1 {
-    font-size: 60px;
+    font-size: 120px;
     margin-left: 0;
   }
 
   nav ul {
     right: 45px !important;
+  }
+}
+
+@media (max-width: 645px) {
+  .blog-item:nth-child(3) {
+    border-width: 0 1px 0 1px;
+  }
+
+  .blog-item:last-child {
+    border-width: 1px 1px 1px 1px;
+  }
+
+  #header h1 {
+    font-size: 100px;
+    margin-left: 0;
   }
 }
 
