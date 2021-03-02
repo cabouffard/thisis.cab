@@ -150,7 +150,6 @@ p {
 }
 
 #blog-container {
-  margin-bottom: 100px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -159,6 +158,14 @@ p {
 #blog {
   width: 100%;
 }
+
+#credit {
+  margin-top: 20px;
+  margin-bottom: 75px;
+  width: 100%;
+  font-size: 18px;
+}
+
 
 #blog-container a.blog-btn {
   position: absolute;
