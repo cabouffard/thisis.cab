@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>CAB</title>
-    <!-- <link rel="preload" href="main.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
-    <!-- <noscript><link rel="stylesheet" href="main.css"></noscript> -->
-    <link rel="stylesheet" href="critical.css">
-    <link rel="stylesheet" href="non_critical.css">
+    <link rel="preload" href="main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- <link href="./critical.css" rel="stylesheet"> -->
+    <!-- <link href="./non_critical.css" rel="stylesheet"> -->
     <link rel="canonical" href="https://thisis.cab/">
     <meta name="description" content="CAB's personal website">
     <meta property="og:url" content="https://thisis.cab">
@@ -27,6 +26,9 @@
         document.body.setAttribute("data-theme", "light" === t ? "dark" : "light")
       }
     </script>
+    <styletag>
+        stylecontent
+    </styletag>
   </head>
   <body data-theme="dark">
     <div class="container">
@@ -48,81 +50,69 @@
             </a>
           </li>
           <li class="nav-item">
-            <a>
-              <img onclick="toggle()" id="flip-color" src="assets/svg/switch.svg" alt="Switch Theme Color" width="57px" height="32px">
+            <a rel="nofollow">
+              <img onclick="toggle()" id="flip-color" src="assets/svg/switch.svg" alt="Switch Theme Color" width="57px" height="45px">
             </a>
           </li>
         </ul>
       </nav>
       <section id="main">
-        <div class="row">
-          <div class="col col-center col-5">
-            <img class="hero-image" src="assets/svg/avatar_reg.svg" alt="CAB's face in cartoon" width="57px" height="32px" />
-          </div>
-          <div class="col col-7">
+        <img class="hero-image" src="assets/svg/avatar_reg.svg" alt="CAB's face in cartoon" />
+        <div style="width: 50%">
             <section id="header">
-              <h1>CAB</h1>
-              <h2>Data Engineer <p></p>
-              </h2>
+                <h1>CAB</h1>
+                <h2>Data Engineer</h2>
             </section>
             <section id="previous">
-              <ul>
-                <li>Currently <a href="https://www.chord.co">@Chord</a>. </li>
-                <li>Previously <a href="https://www.yaguara.co">@Yaguara</a>, <a href="https://www.twitter.com/glossier">@Glossier</a>, <a href="https://www.twitter.com/dynamomtl">@Dynamo</a>. </li>
-              </ul>
+                <ul>
+                    <li>Currently <a href="https://www.chord.co">@Chord</a>. </li>
+                    <li>Previously <a href="https://www.yaguara.co">@Yaguara</a>, <a href="https://www.twitter.com/glossier">@Glossier</a>, <a href="https://www.twitter.com/dynamomtl">@Dynamo</a>. </li>
+                </ul>
             </section>
-          </div>
         </div>
       </section>
+
       <section id="blog">
-        <div class="row">
-          <div class="col-12">
-            <div id="blog-container">
-              <a class="blog-btn" href="https://www.medium.com/@thisiscab">
-                <img src="assets/svg/medium.svg" alt="Medium Logo" width="57px" height="32px">
-              </a>
-              <div class="blog-item">
-                <span class="blog-title">
-                  <a href="https://medium.com/yaguara-office-hours/what-why-how-and-who-a-story-about-review-apps-95582c7c193a?source=rss-2f96882940------2}">What, Why, How and Who? A story about Review Apps!</a>
-                </span>
-                <span class="blog-company">Yaguara</span>
-                <span class="blog-link">
-                  <a href="https://medium.com/yaguara-office-hours/what-why-how-and-who-a-story-about-review-apps-95582c7c193a?source=rss-2f96882940------2">
-                    <img class="btn-link-lg color-reverse" src="assets/svg/link.svg" alt="Go To Site" width="30px" height="32px"/>
-                  </a>
-                </span>
-              </div>
-              <div class="blog-item">
-                <span class="blog-title">
-                  <a href="https://medium.com/yaguara-office-hours/rebuilding-our-infrastructure-from-scratch-with-docker-aws-ecs-datadog-and-terraform-c943b3d8b18d?source=rss-2f96882940------2}">Rebuilding our infrastructure from scratch with Docker, AWS ECS, Datadog and Terraform</a>
-                </span>
-                <span class="blog-company">Yaguara</span>
-                <span class="blog-link">
-                  <a href="https://medium.com/yaguara-office-hours/rebuilding-our-infrastructure-from-scratch-with-docker-aws-ecs-datadog-and-terraform-c943b3d8b18d?source=rss-2f96882940------2}">
-                    <img class="btn-link-lg color-reverse" src="assets/svg/link.svg" alt="Go To Site" width="30px" height="32px" />
-                  </a>
-                </span>
-              </div>
-              <div class="blog-item">
-                <span class="blog-title">
-                  <a href="https://medium.com/glossier/how-to-build-a-data-warehouse-our-custom-pipeline-implementation-with-luigi-b52c08e2c654?source=rss-2f96882940------2}">How to Build a Data Warehouse: Our custom pipeline implementation with Luigi</a>
-                </span>
-                <span class="blog-company">Glossier</span>
-                <span class="blog-link">
-                  <a href="https://medium.com/glossier/how-to-build-a-data-warehouse-our-custom-pipeline-implementation-with-luigi-b52c08e2c654?source=rss-2f96882940------2}">
-                    <img class="btn-link-lg color-reverse" src="assets/svg/link.svg" alt="Go To Site" width="30px" height="32px" />
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
+        <a class="blog-btn" href="https://www.medium.com/@thisiscab">
+          <img src="assets/svg/medium.svg" alt="Medium Logo" width="57px" height="32px">
+        </a>
+        <div class="blog-item">
+        <div class="blog-title">
+            <a href="https://medium.com/yaguara-office-hours/what-why-how-and-who-a-story-about-review-apps-95582c7c193a?source=rss-2f96882940------2}">What, Why, How and Who? A story about Review Apps!</a>
+        </div>
+        <span class="blog-company">Yaguara</span>
+        <span class="blog-link">
+            <a href="https://medium.com/yaguara-office-hours/what-why-how-and-who-a-story-about-review-apps-95582c7c193a?source=rss-2f96882940------2">
+            <img class="btn-link-lg color-reverse" src="assets/svg/link.svg" alt="Go To Site" width="30px" height="32px"/>
+            </a>
+        </span>
+        </div>
+        <div class="blog-item">
+        <div class="blog-title">
+            <a href="https://medium.com/yaguara-office-hours/rebuilding-our-infrastructure-from-scratch-with-docker-aws-ecs-datadog-and-terraform-c943b3d8b18d?source=rss-2f96882940------2}">Rebuilding our infrastructure from scratch with Docker, AWS ECS, Datadog and Terraform</a>
+        </div>
+        <span class="blog-company">Yaguara</span>
+        <span class="blog-link">
+            <a href="https://medium.com/yaguara-office-hours/rebuilding-our-infrastructure-from-scratch-with-docker-aws-ecs-datadog-and-terraform-c943b3d8b18d?source=rss-2f96882940------2}">
+            <img class="btn-link-lg color-reverse" src="assets/svg/link.svg" alt="Go To Site" width="30px" height="32px" />
+            </a>
+        </span>
+        </div>
+        <div class="blog-item">
+        <div class="blog-title">
+            <a href="https://medium.com/glossier/how-to-build-a-data-warehouse-our-custom-pipeline-implementation-with-luigi-b52c08e2c654?source=rss-2f96882940------2}">How to Build a Data Warehouse: Our custom pipeline implementation with Luigi</a>
+        </div>
+        <span class="blog-company">Glossier</span>
+        <span class="blog-link">
+            <a href="https://medium.com/glossier/how-to-build-a-data-warehouse-our-custom-pipeline-implementation-with-luigi-b52c08e2c654?source=rss-2f96882940------2}">
+            <img class="btn-link-lg color-reverse" src="assets/svg/link.svg" alt="Go To Site" width="30px" height="32px" />
+            </a>
+        </span>
         </div>
       </section>
+
       <section id="credit">
-        <div> design by <a class="blog-btn" href="https://www.designk.at/">Kat</a>
-          <div>
-            <section></section>
-          </div>
+          <div> <span>design by <a href="https://www.designk.at/">Kat</a></span>
         </div>
       </section>
     </div>

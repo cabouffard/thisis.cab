@@ -1,89 +1,3 @@
-/* roboto-light latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local(''),
-       url('assets/fonts/roboto-v2-latin-light.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('assets/fonts/roboto-v2-latin-light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* roboto-regular latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local(''),
-       url('assets/fonts/roboto-v2-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('assets/fonts/roboto-v2-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* roboto-mono-light - latin */
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local(''),
-       url('assets/fonts/roboto-mono-v2-latin-light.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('assets/fonts/roboto-mono-v2-latin-light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* roboto-mono-regular - latin */
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local(''),
-       url('assets/fonts/roboto-mono-v2-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('assets/fonts/roboto-mono-v2-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* monument-extended-regular - latin */
-@font-face {
-  font-family: 'Monument Extended';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local(''),
-       url('assets/fonts/monument-extended-v1-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('assets/fonts/monument-extended-v1-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* monument-extended-black - latin */
-@font-face {
-  font-family: 'Monument Extended';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: local(''),
-       url('assets/fonts/monument-extended-v1-latin-black.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('assets/fonts/monument-extended-v1-latin-black.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* monument-extended-light - latin */
-@font-face {
-  font-family: 'Monument Extended';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local(''),
-       url('assets/fonts/monument-extended-v1-latin-light.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('assets/fonts/monument-extended-v1-latin-light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-p {
-  line-height: 29.4px;
-  letter-spacing: 0.03em;
-}
-
-#resume span {
-  font-size: 25px;
-}
-
 a:hover {
   color: var(--color-hi-rgba);
   transition-duration: .5s;
@@ -101,52 +15,14 @@ a img.color-reverse:hover {
   transition-duration: .5s;
 }
 
-@media (max-width: 802px) {
-  .container {
-    padding: 0 1em;
-  }
-
-  #main {
-    margin-top: 8em;
-    margin-bottom: 6rem;
-  }
-
-  #header h1 {
-    font-size: 120px;
-    margin-left: 0;
-  }
-
-  nav ul {
-    right: 45px !important;
-  }
-}
-
-@media (max-width: 645px) {
-  .blog-item:nth-child(3) {
-    border-width: 0 1px 0 1px;
-  }
-
-  .blog-item:last-child {
-    border-width: 1px 1px 1px 1px;
-  }
-
-  #header h1 {
-    font-size: 100px;
-    margin-left: 0;
-  }
-}
-
 @media (hover: none) {
   a:hover { color: var(--color); }
   a img:hover { filter: var(--color-filter); }
   a img.color-reverse:hover { filter: var(--color-hi-filter); }
 }
 
-.btn-link {
-  width: 20px;
-  height: 19px;
-}
-
-.pl-10 {
-  padding-left: 10px;
-}
+/* @media (width <= 500px) { */
+/*     #blog { */
+/*         flex-direction: column; */
+/*     } */
+/* } */
